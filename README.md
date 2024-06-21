@@ -9,7 +9,7 @@
 - EC2, ELB, Auto scaling, RDS, Elastic cache, ActiveMQ, Cloud Front
 ## Achitecture 
 
-![image](https://github.com/hieunguyen0202/DevOps-Training/assets/98166568/513a1c6d-b5ae-423b-b34b-9c1f075a27d8)
+![image](https://github.com/hieunguyen0202/DevOps-Training/assets/98166568/5656bfe4-08c0-4704-88e8-d10f0a89444d)
 
 ## Implement
 ### 119. Introduction
