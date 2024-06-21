@@ -1,3 +1,17 @@
+## Summary
+- An Application Load Balancer (ALB) is used as part of Elastic Beanstalk to distribute incoming requests to EC2 instances running the application. 
+- The EC2 instances are part of an Auto Scaling group, which automatically adjusts the number of instances based on demand. Amazon CloudWatch alarms monitor the Auto Scaling group and trigger scaling actions as needed.
+- Application artifacts are stored in an S3 bucket, allowing for easy deployment of the latest artifacts by clicking a button.
+- Amazon MQ is used as a managed message broker service for for MySQL back-end. Instead of using memcached on EC2 instances, Amazon ElastiCache is utilized as a managed caching solution. ElastiCache improves performance by storing frequently accessed data in memory.
+- Instead of running the database on EC2 instances, Amazon RDS (Relational Database Service) is used for the back-end database
+
+## Technologies: 
+- EC2, ELB, Auto scaling, RDS, Elastic cache, ActiveMQ, Cloud Front
+## Achitecture 
+
+![image](https://github.com/hieunguyen0202/DevOps-Training/assets/98166568/513a1c6d-b5ae-423b-b34b-9c1f075a27d8)
+
+## Implement
 ### 119. Introduction
 - In this project, we will re architecture or refactor our services. This strategy is called re architecture or refactoring. This approach is used to boost agility or to improve business continuity. So we can add new features, scale effectively and easily and have very good performance for our application workload.
 - So we can add new features, scale effectively and easily and have very good performance for our application workload.
