@@ -9,7 +9,7 @@
 - EC2, ELB, Auto scaling, RDS, Elastic cache, ActiveMQ, Cloud Front
 ## Achitecture 
 
-  ![Screenshot 2024-06-23 093935](https://github.com/hieunguyen0202/vprofile-project/assets/98166568/1f2b9031-f380-4c1f-9ab1-44762e796caa)
+  ![Screenshot 2024-06-23 093935](https://github.com/hieunguyen0202/vprofile-project/assets/98166568/53c30592-548d-41f0-9498-d0a3300182e2)
 
 ## Implement
 ### 119. Introduction
