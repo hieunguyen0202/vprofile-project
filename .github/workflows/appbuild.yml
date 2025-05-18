@@ -13,6 +13,8 @@ env:
  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
  AWS_REGION: ${{ secrets.AWS_REGION }}
  S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+ BEANSTALK_APP_NAME: "aws-infra-03-beanstalk-application"
+ BEANSTALK_ENV_NAME: "aws-infra-03-beanstalk-environment-dev"
 
 
 jobs:
@@ -41,7 +43,20 @@ jobs:
       - name: Upload WAR to S3
         run: |
           aws s3 cp target/vprofile-v2.war s3://${{ secrets.S3_BUCKET_NAME }}/artifacts/vprofile-v2.war
+      
+      - name: Create Elastic Beanstalk Application Version
+        run: |
+          aws elasticbeanstalk create-application-version \
+            --application-name ${{ env.BEANSTALK_APP_NAME }} \
+            --version-label build-${{ github.run_number }} \
+            --source-bundle S3Bucket=${{ env.S3_BUCKET_NAME }},S3Key=artifacts/vprofile-v2.war \
+            --auto-create-application
 
+      - name: Deploy to Elastic Beanstalk
+        run: |
+          aws elasticbeanstalk update-environment \
+            --environment-name ${{ env.BEANSTALK_ENV_NAME }} \
+            --version-label build-${{ github.run_number }}
 
 
 
