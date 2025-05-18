@@ -12,7 +12,7 @@ env:
  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
  AWS_REGION: ${{ secrets.AWS_REGION }}
- S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+ S3_BUCKET_NAME: "aws-infra-03-s3-artifact-1"
  BEANSTALK_APP_NAME: "aws-infra-03-beanstalk-application"
  BEANSTALK_ENV_NAME: "aws-infra-03-beanstalk-environment-dev"
 
@@ -42,7 +42,7 @@ jobs:
 
       - name: Upload WAR to S3
         run: |
-          aws s3 cp target/vprofile-v2.war s3://${{ secrets.S3_BUCKET_NAME }}/artifacts/vprofile-v2.war
+          aws s3 cp target/vprofile-v2.war s3://${{ env.S3_BUCKET_NAME }}/artifacts/vprofile-v2.war
       
       - name: Create Elastic Beanstalk Application Version
         run: |
