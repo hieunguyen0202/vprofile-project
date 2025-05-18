@@ -3,7 +3,7 @@ name: Build Workflow
 on:
   push:
     paths:
-      - 'repos/**'
+      - '**'
   workflow_dispatch:
 
 jobs:
