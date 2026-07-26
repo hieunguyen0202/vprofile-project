@@ -26,12 +26,6 @@ public class ProducerServiceImpl implements ProducerService {
     public String produceMessage(String message) {
         try {
             ConnectionFactory factory = new ConnectionFactory();
-            /**
-            * System.out.println("Rabitmq host: ::" + RabbitMqUtil.getRabbitMqHost());
-            * System.out.println("Rabitmq port: ::" + RabbitMqUtil.getRabbitMqPort());
-            * System.out.println("Rabitmq user: ::" + RabbitMqUtil.getRabbitMqUser());
-            * System.out.println("Rabitmq password: ::" + RabbitMqUtil.getRabbitMqPassword());
-            **/
             factory.setHost(RabbitMqUtil.getRabbitMqHost());
             factory.setPort(Integer.parseInt(RabbitMqUtil.getRabbitMqPort()));
             factory.setUsername(RabbitMqUtil.getRabbitMqUser());
