@@ -1,0 +1,9 @@
+# Local secrets file (Spring property-placeholder loads it if present)
+src/main/resources/application-secrets.properties
+
+# Common local environment files
+.env
+.env.*
+
+# Maven build output
+target/

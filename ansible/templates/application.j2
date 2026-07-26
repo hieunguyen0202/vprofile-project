@@ -1,8 +1,8 @@
 #JDBC Configutation for Database Connection
 jdbc.driverClassName=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://dbhost:3306/accounts?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
-jdbc.username=db_user
-jdbc.password=db_password
+jdbc.url={{ vprofile_jdbc_url | default('jdbc:mysql://dbhost:3306/accounts?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull') }}
+jdbc.username={{ vprofile_jdbc_username | default('db_user') }}
+jdbc.password={{ vprofile_jdbc_password }}
 
 #Memcached Configuration For Active and StandBy Host
 #For Active Host
@@ -13,10 +13,10 @@ memcached.standBy.host=127.0.0.2
 memcached.standBy.port=11211
 
 #RabbitMq Configuration
-rabbitmq.address=18.220.62.126
-rabbitmq.port=5672
-rabbitmq.username=test
-rabbitmq.password=test
+rabbitmq.address={{ vprofile_rabbitmq_address | default('rabbitmq') }}
+rabbitmq.port={{ vprofile_rabbitmq_port | default('5672') }}
+rabbitmq.username={{ vprofile_rabbitmq_username }}
+rabbitmq.password={{ vprofile_rabbitmq_password }}
 
 #Elasticesearch Configuration
 elasticsearch.host =192.168.1.85
